@@ -14,6 +14,11 @@ user.email = 'amine@example.com'
 user.password = 'password'
 user.save!
 
+user2 = User.new
+user2.email = 'nico@example.com'
+user2.password = 'password'
+user2.save!
+
 puts 'Creating planets...'
 planets_attributes = [
   {
@@ -30,9 +35,27 @@ planets_attributes = [
   },
   {
     name:         'Mars',
-    description:      'quatrieme planete, tres confortale et pas chere et desertique',
+    description:      'troisieme planete, tres confortale et pas chere et desertique',
     price:     '1200',
     user: user,
+  },
+    {
+    name:         'Jupiter',
+    description:      'quatrieme planete, ultra confortale mais chere',
+    price:     '2100',
+    user: user,
+  },
+  {
+    name:         'Terre',
+    description:      'cinquieme planete, tres confortale et pas chere, mais vous vous y sentirez comme chez vous',
+    price:     '800',
+    user: user2,
+  },
+  {
+    name:         'Uranus',
+    description:      'sixieme planete, moyennement confortable, mais tres calme',
+    price:     '1900',
+    user: user2,
   }
 ]
 Planet.create!(planets_attributes)
