@@ -1,0 +1,21 @@
+<h1>Users#profile</h1>
+<p>Find me in app/views/users/profile.html.erb</p>
+
+ <h2>My reservations</h2>
+
+<h1> <% @reservations.each do |reservation| %></h1>
+    <ul>
+      <li>
+        <%= reservation.date %>
+      </li>
+    </ul>
+   <% end %>
+
+ <h2>My planets</h2>
+<% @planets.each do |planet| %></h1>
+    <ul>
+      <li>
+        <%= planet.name %>
+      </li>
+    </ul>
+   <% end %>

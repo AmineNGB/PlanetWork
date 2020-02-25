@@ -1,6 +1,11 @@
 class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
     @reservations = Reservation.new
   end
@@ -24,10 +29,6 @@ class ReservationsController < ApplicationController
 
   def show
     @reservations = Reservation.where(user: current_user)
-  end
-
-  def date
-    date = Date.civil(*params[:event].sort.map(&:last).map(&:to_i))
   end
 
   private

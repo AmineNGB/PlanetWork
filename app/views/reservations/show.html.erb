@@ -9,9 +9,16 @@
   <h1> <%current_user.reservations.each do |reservation| %></h1>
     <ul>
       <li>
-        <%= reservation.date %> <%= reservation.planet.name %>
+        <%= reservation.date %>
+      </li>
+    </ul>
+    <h2>My planets</h2>
+    <ul>
+      <li>
+        <%= reservation.planet.name %>
       </li>
     </ul>
    <% end %>
 
 <%end%>
+
