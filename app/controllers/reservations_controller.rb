@@ -1,5 +1,13 @@
 class ReservationsController < ApplicationController
 
+  def new
+  @reservations = Reservation.new
+  end
+
+  def edit
+      @reservations = Reservations.find(params[:id])
+  end
+
   def user_show
     @reservations = Reservation.where(user: current_user)
   end

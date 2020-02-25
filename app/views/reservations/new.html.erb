@@ -1,36 +1,7 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
-      <form action="#">
+<h1>Create your Reservation</h1>
 
-      <h2 class="text-center mb-5">Create your reservation</h2>
-      <div class="form-row">
-              <div class="col-6 form-group">
-                <label for="first-name">Your first name</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Dark">
-              </div>
-              <div class="col-6 form-group">
-                <label for="last-name">Your last name</label>
-                <input type="text" class="form-control" id="last-name" placeholder="Vador">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Your email</label>
-              <input type="email" class="form-control" id="email" placeholder="Darvador@gmail.com">
-            </div>
-            <div class="form-group">
-              <label for="referrer">Choose Your planet?</label>
-              <select id="referrer" class="form-control">
-                <option value="">@planet</option>
-              </select>
-            </div>
-            <div class="date_select">
-              <label for="date">Choose Your date?</label>
-              <br>
-             <%= date_select('event', 'date') %>
-          </div>
-      </form>
-    </div>
-  </div>
-</div>
-
+<%= simple_form_for @reservations do |f| %>
+  <%= f.error_notification %>
+   <%= f.input :date %>
+   <%= f.button :submit, class: "btn-dark" %>
+   <% end %>
