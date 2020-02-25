@@ -60,18 +60,15 @@ planets_attributes = [
 ]
 Planet.create!(planets_attributes)
 
-reservations_attributes = [
-  # {
-  #   date:         '30/03/2021',
-  #   planet:     Planet.find_by(name: "Mars"),
-  #   user: user,
-  # },
+reservation_att = [
   {
-    date:         '30/04/2021',
-    planet:     Planet.find_by(name: 'Uranus'),
+    date: 20201001,
     user: user,
-  }]
-Reservation.create!(reservations_attributes)
+    planet: Planet.all.sample,
+  },
+]
+
+Reservation.create!(reservation_att)
 
 puts 'Finished!'
 
