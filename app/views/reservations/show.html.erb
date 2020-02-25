@@ -1,19 +1,17 @@
-
-
-
 <%if @reservations.count < 1 %>
-<div class ="d-flex justify-content-center mt-5">
-<p>Vous n avez aucunes reservations</p>
-</div>
-<%= link_to "Retour a a la page d acceuil", root_path %>
+  <div class ="d-flex justify-content-center mt-5">
+    <p>Vous n avez aucunes reservations</p>
+  </div>
+  <%= link_to "Retour à la page d acceuil", root_path %>
 
 <%else%>
 
-<h1> <%@reservations.each do |reservation| %></h1>
-
-
-<%= reservation%>
-
-<%end%>
+  <h1> <%current_user.reservations.each do |reservation| %></h1>
+    <ul>
+      <li>
+        <%= reservation.date %> <%= reservation.planet.name %>
+      </li>
+    </ul>
+   <% end %>
 
 <%end%>
