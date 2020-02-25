@@ -1,6 +1,6 @@
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: #eeeeee;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 300px;
   border-radius: 5px;
@@ -37,12 +37,14 @@
   font-weight: bold;
   margin: 0;
   align-items: flex-end;
+  font-family: Krona One;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
+  font-family: Karla;
 }
 
 

@@ -59,6 +59,20 @@ planets_attributes = [
   }
 ]
 Planet.create!(planets_attributes)
+
+reservations_attributes = [
+  # {
+  #   date:         '30/03/2021',
+  #   planet:     Planet.find_by(name: "Mars"),
+  #   user: user,
+  # },
+  {
+    date:         '30/04/2021',
+    planet:     Planet.find_by(name: 'Uranus'),
+    user: user,
+  }]
+Reservation.create!(reservations_attributes)
+
 puts 'Finished!'
 
 Planet.all.each do |el|
