@@ -15,7 +15,9 @@ class PlanetsController < ApplicationController
   end
 
   def create
-    Planet.create!(planet_params)
+    @planet = Planet.new(planet_params)
+    @planet.user = current_user
+    @planet.save!
     redirect_to planets_path
   end
 
@@ -36,7 +38,7 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :description, :price)
+    params.require(:planet).permit(:name, :description, :price, :photo)
   end
 
   def set_planet
