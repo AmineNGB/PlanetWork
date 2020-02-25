@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :planets
 
-  get '/reservations', to: 'reservations#user_show'
+  resources :reservations, only: [:new, :create, :edit, :user_show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
