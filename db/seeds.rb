@@ -59,6 +59,17 @@ planets_attributes = [
   }
 ]
 Planet.create!(planets_attributes)
+
+reservation_att = [
+  {
+    date: 20201001,
+    user: user,
+    planet: Planet.all.sample,
+  },
+]
+
+Reservation.create!(reservation_att)
+
 puts 'Finished!'
 
 Planet.all.each do |el|
