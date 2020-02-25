@@ -1,8 +1,15 @@
-<div>
+<div class="container-fluid" id ="img">
 
+<div class="card text-center" style="width: 18rem;background-color: #D3D3D3;">
+  <img class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title"><%= @planet.name %></h5>
 
-  <h1>Planet details</h1>
-  <p><%= @planet.name %></p>
+    <p class="card-text"><%= @planet.description %></p>
+     <p>Prix <%= @planet.price %>$</p>
 
-  <p><%= @planet.description %></p>
+     <%= link_to "Reservation", new_planet_reservation_path(@planet), class: "btn btn-light"%>
 </div>
+</div>
+</div>
+
