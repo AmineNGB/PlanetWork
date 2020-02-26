@@ -1,0 +1,13 @@
+<div>
+  <h1>Edit a Planet</h1>
+</div>
+
+<div>
+  <%= simple_form_for [@planet] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Edit this planet !", class: "btn btn-primary" %>
+  <% end %>
+</div>

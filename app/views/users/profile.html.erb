@@ -7,6 +7,10 @@
     <ul>
       <li>
         <%= reservation.date %>
+        <%= link_to "", reservation_path(reservation),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "fas fa-trash" %>
       </li>
     </ul>
    <% end %>
@@ -16,6 +20,16 @@
     <ul>
       <li>
         <%= planet.name %>
+        <%= link_to "", planet_path(planet),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "fas fa-trash" %>
       </li>
     </ul>
-   <% end %>
+<% end %>
+<%= link_to "Add a Planet", new_planet_path, class: "btn-flat" %>
+
+
+
+
+
