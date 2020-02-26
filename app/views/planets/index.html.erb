@@ -1,14 +1,13 @@
-<div class="container">
-  <h1>Hello</h1>
-
-
+<h1>Hello</h1>
+​
+​
   <div class="row">
     <% @planets.each do |planet| %>
     <div class="col-12 col-md-4 mb-3">
       <%= link_to planet_path(planet), class: "link_card"  do %>
         <div class="card-trip">
           <img
-            src="https://cdn.futura-sciences.com/buildsv6/images/wide1920/1/a/a/1aa5e55057_50157976_plane-te-b-hd.jpg" />
+            src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
           <div class="card-trip-infos">
             <div>
               <h2><%= planet.name %>
@@ -16,11 +15,9 @@
               <p><%= planet.description %></p>
             </div>
             <h2 class="card-trip-pricing"><%= planet.price %>€</h2>
-            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
           </div>
         </div>
       <% end %>
     </div>
     <% end %>
   </div>
-</div>

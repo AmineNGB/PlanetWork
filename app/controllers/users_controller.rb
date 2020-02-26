@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @planets = current_user.planets
   end
 
-  private
+  def index
+    @users = User.all
+  end
 
 end
