@@ -6,12 +6,11 @@
 
 <%else%>
 
-  <h1> <%current_user.reservations.each do |reservation| %></h1>
-    <ul>
-      <li>
-        <%= reservation.date %> <%= reservation.planet.name %>
-      </li>
-    </ul>
+  <%current_user.reservations.each do |reservation| %>
+    <li>
+       <strong><%= reservation.planet.name %></strong> est réservée pour le <%= reservation.date %>
+    </li>
    <% end %>
 
 <%end%>
+

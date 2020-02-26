@@ -1,12 +1,18 @@
 class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
-    @reservations = Reservation.new
+    @planet = Planet.find(params[:planet_id])
+    @reservation = Reservation.new
   end
 
   def edit
-      @reservations = Reservation.find(params[:id])
+      @reservation = Reservation.find(params[:id])
   end
 
   def update
@@ -17,17 +23,18 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.planet = Planet.find(params[:planet_id])
     @reservation.user = current_user
-    @reservation.save!
-    redirect_to reservation_path
+
+    if @reservation.save!
+      redirect_to reservation_path(@reservation)
+    else
+      render :new
+    end
   end
 
   def show
     @reservations = Reservation.where(user: current_user)
-  end
-
-  def date
-    date = Date.civil(*params[:event].sort.map(&:last).map(&:to_i))
   end
 
   private
