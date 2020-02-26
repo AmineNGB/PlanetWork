@@ -32,10 +32,8 @@ class PlanetsController < ApplicationController
 
   def destroy
     @planet.destroy
-    redirect_to planets_path
+    redirect_to profile_path
   end
-
-  private
 
   def planet_params
     params.require(:planet).permit(:name, :description, :price, :photo)
