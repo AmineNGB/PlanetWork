@@ -24,6 +24,8 @@
           method: :delete,
           data: { confirm: "Are you sure?" },
           class: "fas fa-trash" %>
+        <%=link_to "", edit_planet_path(planet),
+          class: "fas fa-pen" %>
       </li>
     </ul>
 <% end %>

@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   # get 'reservations/:id/edit', to: 'reservations#edit', as: :edit_reservation
   resources :users do
     resources :reservations, only: [:index]
+    resources :planets, only: [:edit]
   end
 
   get '/profile', to: "users#profile", as: :profile
+  get '/profile/:planet_id/edit', to: "users#edit", as: :test_amine
 
   root 'planets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
