@@ -1,16 +1,19 @@
 .card-trip {
+  transition-duration: 0.1s;
   overflow: hidden;
-  background: #eeeeee;
+  background: rgba($color: white, $alpha: 0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 325px;
-  width: 400px;
+  height: 275px;
   border-radius: 5px;
   margin: 15px;
+  position: relative;
 }
 
 .card-trip:hover {
-  transform: scale(1.01);
-  text-decoration: none;
+  transform: scale(1.1);
+  transition-duration: 0.4s;
+  background: rgba($color: white, $alpha: 1);
+
 }
 
 // .card-trip a {
@@ -32,6 +35,8 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  padding: 5px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .card-trip h2 {
@@ -55,12 +60,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-infos .card-trip-pricing {
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  right: 10px;
+  bottom: 10px;
+  text-align: right;
 }

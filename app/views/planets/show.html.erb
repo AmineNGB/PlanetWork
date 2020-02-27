@@ -1,15 +1,45 @@
-<div class="container-fluid" id ="img">
+<div class="container">
+  <div class="planet-card">
+    <img src="<%= cl_image_path @planet.photo.key if @planet.photo.attached? %>" />
+    <div class="planet-card-info">
+      <div>
+        <div>
+          <h1><%= @planet.name %>
+          </h1>
+          <p><%= @planet.description %></p>
+        </div>
+        <h2 class="planet-card-pricing"><%= @planet.price %>€</h2>
+      </div>
+      <div class="owner-info">
+        <h3>Propriétaire :</h3>
+        <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, width: 40, height: 40, crop: :fill, alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <% else %>
+        <%= image_tag "astronaut.png", alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <% end %>
+        <p><%= @planet.user.email %></p>
 
-<div class="card text-center" style="width: 18rem;background-color: #D3D3D3;">
-  <img class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title"><%= @planet.name %></h5>
+      </div>
+    </div>
+  </div>
 
-    <p class="card-text"><%= @planet.description %></p>
-     <p>Prix <%= @planet.price %>$</p>
 
-     <%= link_to "Reservation", new_planet_reservation_path(@planet), class: "btn btn-light"%>
+
+
 </div>
-</div>
-</div>
 
+
+<div class="container-fluid" id="img">
+
+  <div class="card text-center" style="width: 18rem;background-color: #D3D3D3;">
+    <img class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title"><%= @planet.name %></h5>
+
+      <p class="card-text"><%= @planet.description %></p>
+      <p>Prix <%= @planet.price %>$</p>
+
+      <%= link_to "Reservation", new_planet_reservation_path(@planet), class: "btn btn-light"%>
+    </div>
+  </div>
+</div>
