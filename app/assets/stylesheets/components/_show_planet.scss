@@ -6,4 +6,24 @@
   height: 400px;
   width: 100%;
   object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 4em;
+  border-style: solid;
+  border-color:rgba($color: white, $alpha: 0.5);
+}
+
+.planet-card-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba($color: white, $alpha: 0.3);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.planet-card-info h1 {
+  font-family: Krona One;
+}
+
+.owner-info {
+  text-align: right;
 }

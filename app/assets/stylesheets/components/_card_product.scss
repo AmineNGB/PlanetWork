@@ -1,9 +1,9 @@
 .card-trip {
   transition-duration: 0.1s;
   overflow: hidden;
-  background: #eeeeee;
+  background: rgba($color: white, $alpha: 0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 325px;
+  height: 275px;
   border-radius: 5px;
   margin: 15px;
   position: relative;
@@ -12,6 +12,8 @@
 .card-trip:hover {
   transform: scale(1.1);
   transition-duration: 0.4s;
+  background: rgba($color: white, $alpha: 1);
+
 }
 
 // .card-trip a {
