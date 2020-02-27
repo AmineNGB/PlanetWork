@@ -1,3 +1,51 @@
 body {
-  background-color: #eeeeee;
+  background-image: url(asset-path("image_du_ciel.jpeg"));
+  background-size: cover;
 }
+
+h1 {
+  color: white;
+  background-color: rgba(55, 80, 120, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+h2 {
+  margin: 0 -15px;
+  margin-bottom: 5px;
+  color: white;
+  background-color: rgba(80, 80, 200, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#profile p {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}
+
+#profile a {
+  font-size: 20px;
+  color: white;
+  background-color: #132029;
+  padding: 0 10px;
+  border-radius: 6px;
+}
+
+
+#profile {
+  width: 250px;
+  position: relative;
+  background-color: rgba(55, 80, 120, 0.8);
+  border-radius: 8px;
+
+}
+
+.cards-profile{
+  background-color: rgba(55, 80, 120, 0.8);
+  border-radius: 8px;
+
+}
+

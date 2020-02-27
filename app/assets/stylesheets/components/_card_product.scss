@@ -2,8 +2,9 @@
   overflow: hidden;
   background: #eeeeee;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 300px;
+  height: 325px;
   border-radius: 5px;
+  margin: 15px;
 }
 
 .card-trip:hover {
@@ -49,7 +50,7 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
