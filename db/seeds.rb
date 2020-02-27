@@ -24,46 +24,85 @@ planets_attributes = [
   {
     name:         'Mercure',
     description:      'premier planete, tres confortale',
-    price:     '1400',
+    price:     rand(800..4000),
     user: user,
+    photo_file: 'mercure.jpeg'
   },
   {
     name:         'Venus',
     description:      'seconde planete, tres confortale et pas chere',
-    price:     '1100',
+    price:     rand(800..4000),
     user: user,
-  },
-  {
-    name:         'Mars',
-    description:      'troisieme planete, tres confortale et pas chere et desertique',
-    price:     '1200',
-    user: user,
-  },
-    {
-    name:         'Jupiter',
-    description:      'quatrieme planete, ultra confortale mais chere',
-    price:     '2100',
-    user: user,
+    photo_file: 'venus.jpeg'
   },
   {
     name:         'Terre',
-    description:      'cinquieme planete, tres confortale et pas chere, mais vous vous y sentirez comme chez vous',
-    price:     '800',
-    user: user2,
+    description:      'troisieme planete, tres confortale et pas chere, mais vous vous y sentirez comme chez vous',
+    price:     rand(800..4000),
+    user: user,
+    photo_file: 'terre.jpg'
+  },
+  {
+    name:         'Mars',
+    description:      'quatrieme planete, tres confortale et pas chere et desertique',
+    price:     rand(800..4000),
+    user: user,
+    photo_file: 'mars.jpeg'
+  },
+    {
+    name:         'Jupiter',
+    description:      'cinquieme planete, ultra confortale mais chere',
+    price:     rand(800..4000),
+    user: user,
+    photo_file: 'jupiter.jpeg'
   },
   {
     name:         'Uranus',
     description:      'sixieme planete, moyennement confortable, mais tres calme',
-    price:     '1900',
-    user: user2,
-  }
+    price:     rand(800..4000),
+    user: user,
+    photo_file: 'uranus.jpeg'
+
+  },
+  {
+    name:         'Neptune',
+    description:      'septieme planete, moyennement confortable, mais tres calme',
+    price:     rand(800..4000),
+    user: user,
+    photo_file: 'neptune.jpeg'
+  },
 ]
-Planet.create!(planets_attributes)
+
+ap "je suis la"
+
+planets_attributes.each do |planets_attribute|
+  ap "---------------------------------"
+  photo_file = planets_attribute.delete(:photo_file)
+  ap planets_attribute
+  planet = Planet.create!(planets_attribute)
+  ap photo_file
+  planet.photo.attach(io: File.open("photo_seed/#{photo_file}"), filename: 'toto.svg')
+end
 
 reservation_att = [
   {
     date: 20201001,
     user: user,
+    planet: Planet.all.sample,
+  },
+  {
+    date: 20201018,
+    user: user,
+    planet: Planet.all.sample,
+  },
+  {
+    date: 20211201,
+    user: user2,
+    planet: Planet.all.sample,
+  },
+  {
+    date: 21211201,
+    user: user2,
     planet: Planet.all.sample,
   },
 ]
