@@ -1,71 +1,67 @@
-<div class="d-flex justify-content-center">
-  <h1 id="title-profile">My profile</h1>
-</div>
-<div class="d-flex justify-content-center border" id="profile">
-  <div>
+<div class="containeur1">
+  <div class="profile-card">
+    <h1 class="title-profile">Mes profil</h1>
     <% if current_user.photo.attached? %>
-    <div p-3>
+    <div>
       <%= cl_image_tag current_user.photo.key, width: 200, height: 200, crop: :fill %>
     </div>
     <% else %>
     <div>
-      <%= image_tag "non_existing_id.png", width: 200, height: 200, crop: :fill %>
+      <%= image_tag "astronaut.png", width: 200, height: 200, crop: :fill %>
     </div>
     <% end %>
-    <p><%= current_user.email %></p>
-    <%= link_to "Mettre à jour le profil", edit_user_path(current_user) %>
+    <p>Email: <%= current_user.email %></p>
+    <%= link_to "Mettre à jour le profil", edit_user_path(current_user) %> <br>
+    <%= link_to "Ajouter une planete", new_planet_path, class: "btn btn-dark mt-4" %>
   </div>
-</div>
-<hr>
-<h2 id="profile-h2">My reservations</h2>
-<div class="row border cards-profile">
-  <h1><% @reservations.each do |reservation| %></h1>
-  <div class="col-12 col-md-4 mb-3">
-    <div class="card-trip">
-      <img
-      src="<%= cl_image_path reservation.planet.photo.key if reservation.planet.photo.attached? %>" />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= reservation.planet.name %>
-          </h2>
-          <p>Réservé le : <%= reservation.date %></p>
-          <%= link_to "", reservation_path(reservation),
-          method: :delete,
-          data: { confirm: "Are you sure?" },
-          class: "fas fa-trash" %>
-        </div>
-        <h2 class="card-trip-pricing"><%= reservation.planet.price %>€</h2>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
-<hr>
-<h2 id="profile-h2">My planets</h2>
-<div class="row border cards-profile">
-  <% @planets.each do |planet| %></h1>
-  <div class="col-12 col-md-4 mb-3">
-    <div class="card-trip">
-      <img
-      src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>
-          <%= planet.name %>
-          </h2>
-          <%= link_to "", planet_path(planet),
-          method: :delete,
-          data: { confirm: "Are you sure?" },
-          class: "fas fa-trash" %>
-          <%=link_to "", edit_planet_path(planet),
-          class: "fas fa-pen" %>
+  <div>
+    <div class="containeur2">
+      <h2 class="title-profile">Mes réservations</h2>
+      <div class="myreservation">
+        <% @reservations.each do |reservation| %>
+          <div class="card-trip">
+            <img
+            src="<%= cl_image_path reservation.planet.photo.key if reservation.planet.photo.attached? %>" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= reservation.planet.name %>
+                </h2>
+                <p>Réservé le : <%= reservation.date %></p>
+                <%= link_to "", reservation_path(reservation),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "fas fa-trash" %>
+              </div>
+              <h2 class="card-trip-pricing"><%= reservation.planet.price %>€</h2>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
+    <hr>
+    <h2 class="title-profile">Mes planetes</h2>
+    <div class="myreservation">
+      <% @planets.each do |planet| %>
+        <div class="card-trip">
+          <img
+          src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>
+              <%= planet.name %>
+              </h2>
+              <%= link_to "", planet_path(planet),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "fas fa-trash" %>
+              <%=link_to "", edit_planet_path(planet),
+              class: "fas fa-pen" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+    </div>
   </div>
-  <% end %>
 </div>
-<div>
-  <%= link_to "Add a Planet", new_planet_path, class: "btn-flat" %>
-</div>
-<br>
