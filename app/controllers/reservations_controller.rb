@@ -27,7 +27,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
     if @reservation.save!
-      redirect_to reservation_path(@reservation)
+      redirect_to profile_path
     else
       render :new
     end
@@ -35,6 +35,14 @@ class ReservationsController < ApplicationController
 
   def show
     @reservations = Reservation.where(user: current_user)
+  end
+
+  def destroy
+    @reservation.destroy
+    respond_to do |format|
+      format.html { redirect_to profile_url, notice: 'Garden was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
