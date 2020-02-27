@@ -3,21 +3,26 @@ body {
   background-size: cover;
 }
 
-h1 {
+#profile h1 {
   color: white;
+  text-align: center;
   background-color: rgba(55, 80, 120, 0.8);
-  padding: 15px;
   border-radius: 10px;
 }
-
-h2 {
-  margin: 0 -15px;
-  margin-bottom: 5px;
+#title-profile{
   color: white;
-  background-color: rgba(80, 80, 200, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
+  padding: 10px;
+  background-color: rgba(55, 80, 120, 0.8);
+  border-radius: 8px;
+}
+
+#profile-h2 {
+  color: white;
+  padding: 10px;
+  background-color: rgba(55, 80, 120, 0.8);
+  border-radius: 8px;
+  margin: -15px;
+  margin-bottom: 15px;
 }
 
 #profile p {
