@@ -8,23 +8,29 @@ body {
 .containeur1 {
   display: flex;
   align-items: start;
-
 }
 
 .containeur2 {
   display: flex;
   flex-direction: column;
-
 }
 
 .myreservation {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-background-color: rgba(white, 0.2);
-border-radius: 20px;
-padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  background-color: rgba(white, 0.2);
+  border-radius: 20px;
+  padding: 10px 0;
+}
 
+.myplanets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(white, 0.2);
+  border-radius: 20px;
+  padding: 10px 0;
 }
 
 .profile-card{
@@ -36,6 +42,7 @@ padding: 10px 0;
   position: sticky;
   top: 5px;
 }
+
 .cards-profile {
   background-color: rgba(55, 80, 120, 0.8);
   border-radius: 8px;
@@ -49,7 +56,6 @@ padding: 10px 0;
   border-radius: 5px;
   margin: 15px;
 }
-
 
 .title-profile {
   color: white;
