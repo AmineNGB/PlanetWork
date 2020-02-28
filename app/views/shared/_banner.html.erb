@@ -1,6 +1,21 @@
 <div class="banner">
   <div class="container">
     <h1 style="font-family: Krona One;">PlanetWork</h1>
-    <p>Lassés des vacances à Saint Malo ? Visitez plutot une nouvelle planète !</p>
+    <p>Lassés des vacances en Crète ? Visitez plutot une nouvelle <strong>planète</strong> !</p>
+    <div class="row mb-4" style="display: flex; justify-content: space-evenly;">
+      <div class="search-bar col-6 mt-4">
+        <%= form_tag planets_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Chercher une planète ..."
+      %>
+      <div class="search-btn">
+        <%= submit_tag "Go !", class: "search-button btn btn-dark" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
   </div>
+</div>
 </div>

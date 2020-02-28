@@ -23,7 +23,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.planet = Planet.find(params[:planet_id])
+    @planet = Planet.find(params[:planet_id])
+    @reservation.planet = @planet
     @reservation.user = current_user
 
     if @reservation.save!

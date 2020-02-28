@@ -1,13 +1,15 @@
-<div>
-  <h1>Create a new Planet</h1>
-</div>
+<div class="container">
+  <div>
+    <h1>Create a new Planet</h1>
+  </div>
 
-<div>
-  <%= simple_form_for [@planet] do |f| %>
+  <div>
+    <%= simple_form_for [@planet] do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Create this planet !", class: "btn btn-primary" %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
