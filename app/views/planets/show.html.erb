@@ -12,10 +12,10 @@
       </div>
       <div class="owner-info">
         <h3>Propriétaire :</h3>
-        <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, width: 40, height: 40, crop: :fill, alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <% if @planet.user.photo.attached? %>
+        <%= cl_image_tag @planet.user.photo.key, width: 40, height: 40, crop: :fill, alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
         <% else %>
-        <%= image_tag "astronaut.png", alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <%= image_tag "astronaut.png", alt: "alttext", class: "avatar dropdown-toggle mb-1", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
         <% end %>
         <p><%= @planet.user.email %></p>
 
@@ -29,7 +29,7 @@
 </div>
 
 
-<div class="container-fluid" id="img">
+<!-- <div class="container-fluid" id="img">
 
   <div class="card text-center" style="width: 18rem;background-color: #D3D3D3;">
     <img class="card-img-top">
@@ -42,4 +42,4 @@
       <%= link_to "Reservation", new_planet_reservation_path(@planet), class: "btn btn-light"%>
     </div>
   </div>
-</div>
+</div> -->
