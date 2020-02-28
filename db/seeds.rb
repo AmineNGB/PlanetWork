@@ -23,7 +23,7 @@ puts 'Creating planets...'
 planets_attributes = [
   {
     name:         'Mercure',
-    description:      'premier planete, tres confortale',
+    description:      'Mercure est la planète la plus proche du Soleil et la moins massive du Système solaire, tres confortale',
     price:     rand(800..4000),
     user: user,
     photo_file: 'mercure.jpeg'
