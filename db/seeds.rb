@@ -143,7 +143,12 @@ planets_attributes = [
   },
   {
     name:         'Naboo',
-    description:      "Elu plusieurs fois par ses propres habitants comme la planete la plus jolie de tout l'univers, Naboo jouit d'une position idéale pour tout les amoureux de la nature",
+    description:      "Naboo est une planète de la galaxie de Xandar.
+
+Située dans la Bordure Médiane, elle est visible dans les épisodes I et II, où elle occupe une place centrale, et à la fin des épisodes III et VI (dans la version remasterisée). La capitale humaine de Naboo est la cité de Theed, située en bordure d'une haute falaise. La capitale des Gungans est Otoh Gunga.
+
+Distance de la Terre : 50AL\n
+Climat : Tempéré",
     price:     rand(800..4000),
     user: user,
     photo_file: 'Naboo.jpg'
@@ -185,7 +190,11 @@ planets_attributes = [
   },
   {
     name:         'Tatooine',
-    description:      'Tatooine est une planete desertique, il y a pas grand monde à part du sable du sable et encore du sable',
+    description:      "Tatooine est une planète-désert de la galaxie de Xandar. Située dans la Bordure extérieure, cette planète orbite autour des étoiles Tatooine I et II. Il s'agit du monde d'origine de la famille Skywalker.
+
+Malgré la chaleur torride qui règne à sa surface, Tatooine est le monde d'origine des Tuskens et des Jawas. Étant éloignée du centre de la galaxie, elle n'est pas sous la juridiction de la République galactique, ni de l'Empire galactique après. Du fait de sa position stratégique dans ce secteur de la galaxie, la planète est aux mains des Hutts, elle est dirigée par le gangster Jabba le Hutt.
+Distance de la Terre : Très, très loin (Mais vraiment)
+Climat : Caniculaire (Mais vraiment)",
     price:     rand(800..4000),
     user: user,
     photo_file: 'Tatouine.jpg'
