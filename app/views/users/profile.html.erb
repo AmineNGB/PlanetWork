@@ -10,19 +10,19 @@
       <%= image_tag "astronaut.png", width: 200, height: 200, crop: :fill %>
     </div>
     <% end %>
-    <p>Email: <%= current_user.email %></p>
+    <p class="mt-2">Email: <%= current_user.email %></p>
     <%= link_to "Mettre à jour le profil", edit_user_path(current_user) %> <br>
     <%= link_to "Ajouter une planete", new_planet_path, class: "btn btn-dark mt-4" %>
   </div>
   <div class="containeur1">
     <div class="containeur2">
       <h2 class="title-profile">Mes réservations</h2>
-      <div class="row mb-4">
+      <div class="row">
         <% @reservations.each do |reservation| %>
-        <div class="myreservations col-12 col-sm-12 col-md-6 col-lg-3">
+        <div class="myreservations col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="card-trip">
             <img src="<%= cl_image_path reservation.planet.photo.key if reservation.planet.photo.attached? %>" />
-            <div class="card-trip-infos">
+            <div class="card-trip-infos" style="color: black;">
               <div>
                 <h2><%= reservation.planet.name %>
                 </h2>
@@ -41,15 +41,15 @@
     </div>
     <div class="containeur3">
       <h2 class="title-profile">Mes planètes</h2>
-      <div class="row mb-4">
+      <div class="row">
         <% @planets.each do |planet| %>
-        <div class="myplanets col-12 col-sm-12 col-md-6 col-lg-3">
+        <div class="myplanets col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="card-trip">
             <img
             src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
             <div class="card-trip-infos">
               <div>
-                <h2>
+                <h2 style="color: black;">
                 <%= planet.name %>
                 </h2>
                 <%= link_to "", planet_path(planet),

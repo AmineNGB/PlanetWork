@@ -8,10 +8,10 @@
           </h1>
           <p><%= @planet.description %></p>
         </div>
-        <h2 class="planet-card-pricing"><%= @planet.price %>€</h2>
+        <h2 class="planet-card-pricing"><%= @planet.price %>k€/j</h2>
       </div>
       <div class="owner-info">
-        <h3>Propriétaire :</h3>
+        <h3>Propriétaire&nbsp;:</h3>
         <% if @planet.user.photo.attached? %>
         <%= cl_image_tag @planet.user.photo.key, width: 40, height: 40, crop: :fill, alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
         <% else %>
