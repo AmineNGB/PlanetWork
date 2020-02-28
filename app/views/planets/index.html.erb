@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <%= form_tag planets_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -7,7 +7,7 @@
   %>
   <%= submit_tag "Search", class: "btn btn-dark" %>
   <% end %>
-</div>
+</div> -->
 <%= render 'shared/banner' %>
 <div class="container">
   <div class="row mb-4">
@@ -21,7 +21,7 @@
             <h2><%= planet.name %>
             </h2>
           </div>
-          <h2 class="card-trip-pricing"><%= planet.price %>€</h2>
+          <h2 class="card-trip-pricing"><%= planet.price %>k€</h2>
         </div>
       </div>
       <% end %>
