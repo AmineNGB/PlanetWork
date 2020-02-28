@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :planets, only: [:edit]
   end
 
+
   get '/profile', to: "users#profile", as: :profile
   get '/profile/:planet_id/edit', to: "users#edit", as: :test_amine
 
