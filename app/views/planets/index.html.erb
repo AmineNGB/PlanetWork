@@ -15,7 +15,9 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
       <%= link_to planet_path(planet), class: "link_card"  do %>
       <div class="card-trip">
-        <img src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
+        <% planet.photos.first do |photo| %>
+          <img src="<%= cl_image_path photo.key %>" />
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= planet.name %>

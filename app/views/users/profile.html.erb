@@ -21,7 +21,9 @@
         <% @reservations.each do |reservation| %>
         <div class="myreservations col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="card-trip">
-            <img src="<%= cl_image_path reservation.planet.photo.key if reservation.planet.photo.attached? %>" />
+           <% reservation.planet.photos.each do |photo| %> 
+            <img src="<%= cl_image_path photo.key if reservation.planet.photos.attached? %>" />
+            <% end %>
             <div class="card-trip-infos" style="color: black;">
               <div>
                 <h2><%= reservation.planet.name %>
@@ -45,8 +47,10 @@
         <% @planets.each do |planet| %>
         <div class="myplanets col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="card-trip">
+          <% planet.photos.each do |photo| %>
             <img
-            src="<%= cl_image_path planet.photo.key if planet.photo.attached? %>" />
+            src="<%= cl_image_path photo.key %>" />
+            <% end %>
             <div class="card-trip-infos">
               <div>
                 <h2 style="color: black;">

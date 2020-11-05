@@ -8,7 +8,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+    <%= f.file_field :photos, multiple: true, direct_upload: true %>
     <%= f.submit "Ajouter !", class: "btn btn-dark" %>
     <% end %>
   </div>

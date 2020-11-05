@@ -1,7 +1,7 @@
 class Planet < ApplicationRecord
   has_many :reservations, dependent: :destroy
   belongs_to :user
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true

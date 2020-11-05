@@ -1,6 +1,9 @@
 <div class="container">
+<% @planet.photos.each do |photo| %>
+    <img src="<%= cl_image_path photo.key %>" />
+  <% end %>
   <div class="planet-card">
-    <img src="<%= cl_image_path @planet.photo.key if @planet.photo.attached? %>" />
+
     <div class="planet-card-info">
       <div>
         <div>
