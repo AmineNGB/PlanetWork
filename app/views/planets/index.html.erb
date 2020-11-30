@@ -1,15 +1,6 @@
-<!-- <div class="container">
-  <%= form_tag planets_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a planet"
-  %>
-  <%= submit_tag "Search", class: "btn btn-dark" %>
-  <% end %>
-</div> -->
-<%= render 'shared/banner' %>
+
 <div class="container">
+<%= cl_video_tag("samples/12-5-vf-insta_lzoype", autoplay: true, muted: true) %>
   <div class="row mb-4">
     <% @planets.each do |planet| %>
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
