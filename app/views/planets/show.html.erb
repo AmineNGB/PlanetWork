@@ -1,5 +1,9 @@
 <div class="container">
+
+<video playsinline="true" autoplay="autoplay" muted="muted" poster="https://res.cloudinary.com/dq5e0qdnx/video/upload/v1/samples/12-5-vf-insta_lzoype.jpg" src="https://res.cloudinary.com/dq5e0qdnx/video/upload/v1/samples/12-5-vf-insta_lzoype.mp4" type="video/mp4">aze</video>
 <% @planet.photos.each do |photo| %>
+<%= cl_video_tag("samples/12-5-vf-insta_lzoype", autoplay: true, muted: true, playsinline: true) %>
+
     <img src="<%= cl_image_path photo.key %>" />
   <% end %>
   <div class="planet-card">
